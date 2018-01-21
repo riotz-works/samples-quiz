@@ -4,10 +4,15 @@
   "main": "handler.js",
   "private": true,
   "devDependencies": {
+    "@types/aws-lambda": "*",
     "@types/node": "*",
     "jsurl-cli": "*",
+    "serverless": "*",
+    "serverless-webpack": "*",
+    "ts-loader": "*",
     "tslint": "*",
-    "typescript": "*"
+    "typescript": "*",
+    "webpack": "*"
   },
   "scripts": {
     "setup": "npm install && npm dedupe",
