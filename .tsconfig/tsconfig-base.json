@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "declaration": true,
+        "sourceMap": true,
+        "outDir": "../target/dist",
+        "removeComments": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "experimentalDecorators": true,
+        "newLine": "LF",
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [ "../src/**/*.ts" ]
+}
