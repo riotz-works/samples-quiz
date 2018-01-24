@@ -8,6 +8,7 @@
     "@types/node": "*",
     "jsurl-cli": "*",
     "serverless": "*",
+    "serverless-finch": "*",
     "serverless-webpack": "*",
     "ts-loader": "*",
     "tslint": "*",

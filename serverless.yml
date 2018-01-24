@@ -11,4 +11,10 @@ provider:
   runtime: nodejs6.10
 
 plugins:
-  - serverless-webpack
+#  - serverless-webpack
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: ${self:service}
+    distributionFolder: website
