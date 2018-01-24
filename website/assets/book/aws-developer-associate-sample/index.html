@@ -1,0 +1,137 @@
+﻿﻿<article class="quiz" data-title="AWS 認定 デベロッパー - アソシエイト レベル サンプル試験" data-subtitle="公式サイトで公開されている AWS 認定デベロッパー – アソシエイト の サンプル問題です。（2014年版）">
+
+    <section class="question">
+        <div class="text">
+            次の文のうち、SQS について正しく述べているものはどれですか？
+        </div>
+        <div>
+            <span class="answer">メッセージは 1 回だけ配信され、先入れ先出しの順序で配信される。</span>
+            <span class="answer">メッセージは 1 回だけ配信され、配信順序は決まっていない。</span>
+            <span class="answer">メッセージは 1 回以上配信され、先入れ先出しの順序で配信される。</span>
+            <span class="answer" data-correct>メッセージは 1 回以上配信され、配信順序は決まっていない。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            EC2 インスタンスは Amazon マシンイメージ（AMI）から起動されます。次のうち、パブリック AMI について当てはまるものはどれですか？
+        </div>
+        <div>
+            <span class="answer">そこの AWS リージョンであっても EC2 インスタンスを起動するために使用できる。</span>
+            <span class="answer">その AMI が格納されている国で EC2 インスタンスを起動するためにのみ使用できる。</span>
+            <span class="answer" data-correct>その AMI が格納されている AWS リージョンで EC2 インスタンスを起動するためにのみ使用できる。</span>
+            <span class="answer">その AMI が格納されている AWS アベイラビリティーゾーンで EC2 インスタンスを起動するためにのみ使用できる。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            企業 B では、オンライン画像認識サービスを提供しており、スケーラビリティを実現するために SQS を利用してシステムコンポーネントを切り離しています。SQS キューからタスクを処理して実行するバックエンドインスタンスは、キューを可能な限り頻繁にポーリングして、処理を早く行えるようにしています。しかし短い周期でのポーリングによって、処理すべきタスクがない空のレスポンスが返り CPU が無駄に消費される可能性があります。空のレスポンスの数を減らすには、どうすればよいですか？
+        </div>
+        <div>
+            <span class="answer">キューの VisibilityTimeout 属性を 20 秒に設定する。</span>
+            <span class="answer" data-correct>キューの ReceiveMessageWaitTimeSeconds 属性を 20 秒に設定する。</span>
+            <span class="answer">キューの MessageRetentionPeriod 属性を 20 秒に設定する。</span>
+            <span class="answer">メッセージの DelaySeconds パラメータを 20 秒に設定する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            Amazon S3 で US‐STANDARD リージョンにオブジェクトを格納したところ、正常に格納できたという確認メッセージを受信しました。その直後に、別の API を呼び出して、このオブジェクトを読み込もうとしました。しかし S3 から、オブジェクトが存在しないというメッセージが返されました。どのような原因が考えられますか？
+        </div>
+        <div>
+            <span class="answer" data-correct>US‐STANDARD で結果整合性を使用していて、バケットでオブジェクトが読み込み可能になるまでに時間がかかることがある。</span>
+            <span class="answer">Amazon S3 のオブジェクトは、第 2 のリージョンに複製されるまでは表示されない。</span>
+            <span class="answer">US‐STANDARD では、新しいオブジェクトが読み込み可能になるまでに 1 秒の遅延が課されている。</span>
+            <span class="answer">バケットのオブジェクト制限を超えたため。この制限を増やすと、オブジェクトが表示される。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            リージョンの CloudFormation スタックの数についてのアカウント制限に達しました。制限を増やすには、どうすればよいですか？  
+        </div>
+        <div>
+            <span class="answer">API を呼び出す。</span>
+            <span class="answer" data-correct>AWS に連絡する。</span>
+            <span class="answer">マネージメントコンソールを使用する。</span>
+            <span class="answer">制限を増やすことはできない。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            DynamoDB について正しいことを述べている文はどれですか？
+        </div>
+        <div>
+            <span class="answer">DynamoDB では、ペシミスティックロックモデルを使用する。</span>
+            <span class="answer" data-correct>DynamoDB では、楽観的オプティミスティック同時実行制御を使用する。</span>
+            <span class="answer" data-correct>DynamoDB では、一貫性を実現するために条件付き書き込みを使用する。</span>
+            <span class="answer">DynamoDB では、読み込み時の項目アクセスを制限する。</span>
+            <span class="answer">DynamoDB では、書き込み時の項目アクセスを制限する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            Amazon EBS‐backed インスタンスと Instance store‐backed インスタンスの違いは何ですか？
+        </div>
+        <div>
+            <span class="answer">Instance store‐backed インスタンスは停止と再開ができる。</span>
+            <span class="answer">Auto Scaling には Amazon EBS‐backed インスタンスを使う必要がある。</span>
+            <span class="answer" data-correct>Amazon EBS‐backed インスタンスは停止と再開ができる。</span>
+            <span class="answer">Virtual Private Cloud には EBS‐backed インスタンスが必要である。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            企業ウェブアプリケーションを Amazon VPC 内にデプロイし、IPSec VPN 経由で企業データセンターに接続しています。このアプリケーションは、オンプレミスの LDAP サーバーに対して認証を行う必要があります。認証後、ログインしたユーザーは、そのユーザーに固有の S3 キー空間のみにアクセスできます。
+            この目的を満たすことができる方法を、選んでください。
+        </div>
+        <div>
+            <span class="answer">アプリケーションを LDAP に対して認証する。次に、アプリケーションで IAM Security Token Service を呼び出して、LDAP 認証情報を使用して IAM にログインする。アプリケーションでは、IAM の一時的な認証情報を使用して適切な S3 バケットにアクセスできる。</span>
+            <span class="answer">アプリケーションを LDAP に対して認証し、ユーザーに関連する IAM ロールを取得する。次に、IAM Security Token Service を呼び出して、その IAM ロールを引き受ける。アプリケーションでは、一時的な認証情報を使用して適切な S3 バケットにアクセスできる。</span>
+            <span class="answer">LDAP 認証情報を使用して、アプリケーションを IAM Security Token Service に対して認証する。これらの一時的な AWS セキュリティ認証情報を使用して、適切な S3 バケットにアクセスする。</span>
+            <span class="answer" data-correct>LDAP に対して認証を行う認証ブローカーを開発し、IAM Security Token Service を使用して IAM フェデレーションユーザー認証情報を取得する。アプリケーションで認証ブローカーを呼び出して、適切な S3 バケットへのアクセスを有する IAM フェデレーションユーザー認証情報を取得する。</span>
+            <span class="answer">IAM Security Token Service に対して認証を行って IAM ロールを引き受け、一時的な AWS セキュリティ認証情報を取得する認証ブローカーを開発する。アプリケーションで認証ブローカーを呼び出して、適切な S3 バケットへのアクセスを有する AWS の一時的なセキュリティ認証情報を取得する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            広告収益モデルの写真共有ウェブサイトを運営しており、サイト訪問者への写真配信に S3 を使用しています。いつからかその写真に他のサイトが直接リンクを張るようになり、広告収益の減少を招いていることに気づきました。この影響を緩和するにはどの対策が効果的ですか？
+        </div>
+        <div>
+            <span class="answer">静的コンテンツに CloudFront ディストリビューションを使用する。</span>
+            <span class="answer" data-correct>パブリックの読み込み権限を削除し、有効期限付きの署名 URL を使用する。</span>
+            <span class="answer">被害を及ぼしているウェブサイトの IP をセキュリティグループで遮断する。</span>
+            <span class="answer">写真をウェブサーバーの EBS ボリュームに保存する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            アプリケーションで 6 GB のファイルを Simple Storage Service にアップロードしようとしていますが、「指定されたアップロードは、アップロード可能な最大オブジェクトサイズを超えています。」というメッセージが表示されます。これを解決する方法はありますか？
+        </div>
+        <div>
+            <span class="answer">ない。Simple Storage Service オブジェクトは 5 GB に制限されている。</span>
+            <span class="answer" data-correct>このオブジェクトにマルチパートアップロード API を使用する。</span>
+            <span class="answer">このオブジェクトに大きなオブジェクトのアップロード API を使用する。</span>
+            <span class="answer">サポートに連絡してオブジェクトサイズ制限を増やす。</span>
+            <span class="answer">異なるリージョンにアップロードする。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+</article>
