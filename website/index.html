@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+<link rel="stylesheet" href="assets/jsQuizEngine/jsQuizEngine.css">
+<link rel="stylesheet" href="assets/site.css">
+
+<title>Quiz | Riotz Prototypes</title>
+
+<article>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <header class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="/">Quiz | Riotz Prototypes</a>
+            </header>
+            <section id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> HOME</a></li>
+                </ul>
+            </section>
+        </div>
+    </nav>
+
+    <section id="selector" class="container">
+        <p>問題集 と 出題数 を ボタンから選択してください.</p>
+        <div>
+            <h3>セールスレップ練習問題</h3>
+            <table>
+                <tr>
+                    <th>２級 問題集</th>
+                    <td><p><a href="?assets/book/sales-rep-grade2/index.html?5"  class="btn btn-default">５問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade2/index.html?10" class="btn btn-default">10問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade2/index.html?20" class="btn btn-default">20問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade2/index.html"    class="btn btn-default">全問</a></p></td>
+                </tr>
+                <tr>
+                    <th>２級 小試験</th>
+                    <td><p><a href="?assets/book/sales-rep-grade2-short-exam/index.html?5"  class="btn btn-default">５問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade2-short-exam/index.html?10" class="btn btn-default">10問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade2-short-exam/index.html?20" class="btn btn-default">20問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade2-short-exam/index.html"    class="btn btn-default">全問</a></p></td>
+                </tr>
+                <tr>
+                    <th>３級 問題集</th>
+                    <td><p><a href="?assets/book/sales-rep-grade3/index.html?5"  class="btn btn-default">５問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade3/index.html?10" class="btn btn-default">10問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade3/index.html?20" class="btn btn-default">20問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-grade3/index.html"    class="btn btn-default">全問</a></p></td>
+                </tr>
+                <tr>
+                    <th>Mix</th>
+                    <td><p><a href="?assets/book/sales-rep-mix/index.html?5"  class="btn btn-default">５問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-mix/index.html?10" class="btn btn-default">10問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-mix/index.html?20" class="btn btn-default">20問</a></p></td>
+                    <td><p><a href="?assets/book/sales-rep-mix/index.html"    class="btn btn-default">全問</a></p></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="jsQuizEngine" class="container">
+        <header id="title" data-bind="visible: !quizStarted()">
+            <div class="jumbotron">
+                <h1 data-bind="text: quizTitle"></h1>
+                <p data-bind="text: quizSubTitle"></p>
+                <p><button class="btn btn-primary btn-lg" data-bind="click: startQuiz">開始！</button></p>
+            </div>
+        </header>
+
+        <section class="quiz" data-bind="visible: quizStarted() && !quizComplete()">
+            <div>問題 <span data-bind="text: currentQuestionIndex"></span> / <span data-bind="text: questionCount"></span></div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': currentProgress }, style: { width: currentProgress() + '%' }"></div>
+            </div>
+            <div class="question-pool"></div>
+            <button class="btn btn-default" data-bind="click: movePreviousQuestion, disable: currentQuestionIsFirst">前の問題</button>
+            <button class="btn btn-default" data-bind="click: showCurrentQuestionAnswer">答えを見る</button>
+            <button class="btn btn-primary" data-bind="click: moveNextQuestion, disable: currentQuestionIsLast, visible: !currentQuestionIsLast()">次の問題</button>
+            <button class="btn btn-primary" data-bind="click: calculateScore, visible: currentQuestionIsLast">採点</button>
+        </section>
+
+        <section class="score" data-bind="visible: quizComplete">
+            <h2 data-bind="text: quizTitle"></h2>
+            <h3 data-bind="text: quizSubTitle"></h3>
+            <table>
+                <tr>
+                    <th>問題数:</th>
+                    <td><span data-bind="text: questionCount"></span></td>
+                </tr>
+                <tr>
+                    <th>正答率:</th>
+                    <td><span data-bind="text: calculatedScore"></span>%</td>
+                </tr>
+                <tr>
+                    <th>正答数:</th>
+                    <td><span data-bind="text: totalQuestionsCorrect"></span></td>
+                </tr>
+            </table>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-bind="attr: { 'aria-valuenow': calculatedScore }, style: { width: calculatedScore() + '%' }, css: { 'progress-bar-success': quizPassed, 'progress-bar-danger': !quizPassed() }"></div>
+            </div>
+            <button class="btn" onclick="location.reload()">もう１回！</button>
+            <div class="pass-indicator">
+                <h1 data-bind="css: { 'text-success': quizPassed, 'text-danger': !quizPassed() }">
+                    <span data-bind="visible: quizPassed">PASS</span>
+                    <span data-bind="visible: !quizPassed()">FAIL</span>
+                </h1>
+            </div>
+        </section>
+    </section>
+
+    <footer class="container">
+        <small>© Riots Works | Powered by <a href="https://github.com/crpietschmann/jsQuizEngine">jsQuizEngine</a>.</small>
+    </footer>
+</article>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://www.yelotofu.com/labs/jquery/snippets/shuffle/jquery.shuffle.js"><</script>
+<script src="assets/jsQuizEngine/jsQuizEngine.js"></script>
+<script>
+var q = null;
+$(function () {
+    if (location.href.indexOf('?') != -1) {
+        $('#selector').hide();
+        $('#jsQuizEngine').show();
+        var selectedQuiz = location.href.substr(location.href.indexOf('?') + 1);
+        q = jsQuizEngine($('#jsQuizEngine'), { quizUrl: selectedQuiz });
+    } else {
+        $('#jsQuizEngine').hide();
+        $('#selector').show();
+    }
+});
+</script>
