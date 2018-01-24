@@ -15,6 +15,11 @@ plugins:
   - serverless-finch
 
 custom:
+  stage-suffix:
+    dev: '-dev'
+    qas: '-qas'
+    stg: '-stg'
+    prd: ''
   client:
-    bucketName: ${self:service}
+    bucketName: ${self:service}${self:custom.stage-suffix.${self:provider.stage}}
     distributionFolder: website
