@@ -1,0 +1,112 @@
+﻿﻿<article class="quiz" data-title="AWS 認定 ソリューションアーキテクト - アソシエイト レベル サンプル試験" data-subtitle="公式サイトで公開されている AWS 認定ソリューションアーキテクト – アソシエイト の サンプル問題です。（2014年版）">
+
+    <section class="question">
+        <div class="text">
+            Amazon Glacier はどのような用途を目的として設計されているでしょうか？
+        </div>
+        <div>
+            <span class="answer">アクティブなデータベースストレージ</span>
+            <span class="answer" data-correct>めったにアクセスされないデータ</span>
+            <span class="answer" data-correct>データアーカイブ</span>
+            <span class="answer">頻繁にアクセスされるデータ</span>
+            <span class="answer">セッションデータのキャッシュ</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            Web アプリケーションのフロントエンドが複数の EC2 インスタンスから構成されており、Elastic LoadBalancing(ELB)の配下にあります。ELB は EC2 インスタンスのヘルスチェックを行うように設定済みです。もし EC2 インスタンスのヘルスチェックが失敗した場合の正しい記述はどれですか？
+        </div>
+        <div>
+            <span class="answer">EC2 インスタンスは ELB によって自動的に置き換えられる</span>
+            <span class="answer">EC2 インスタンスは ELB によって自動で終了される</span>
+            <span class="answer" data-correct>ELB はヘルスチェックに失敗した EC2 インスタンスへのトラフィック送信を止める</span>
+            <span class="answer">EC2 インスタンスは根本原因分析のために ELB によって隔離される</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            ディザスタリカバリー(DR)のシナリオにおいて、RDS のどの機能を用いれば最も安く復旧できるでしょうか？
+        </div>
+        <div>
+            <span class="answer">RDS Multi-AZ</span>
+            <span class="answer">RDS リードレプリカ</span>
+            <span class="answer" data-correct>RDS DB スナップショット</span>
+            <span class="answer">RDS プロビジョンド IOPS</span>
+            <span class="answer">RDS Import/Export</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            従業員向けに機密のトレーニングビデオを配信するシステムを構築しています。S3 に保管したコンテンツを、S3 には直接アクセスできないようにしつつ CloudFront を使って配信するにはどのようにしたら良いでしょうか？
+        </div>
+        <div>
+            <span class="answer" data-correct>CloudFront 用にオリジナルアクセスアイデンティティ(OAI)を作成しバケットの中のオブジェクトにOAI のアクセス権を付与する</span>
+            <span class="answer">“amazon-cf/amazon-cf-sg” の CloudFront アカウントセキュリティグループを S3 のバケットポリシーに追加する</span>
+            <span class="answer">CloudFront 用に IAM ユーザーを作成し、S3 のオブジェクトへのアクセス権を IAM ユーザーに付与する</span>
+            <span class="answer">CloudFront の Distribution ID の一覧をプリンシパルとして取得し、Amazon Resource Name(ARN)で対象のバケットの一覧を取得する S3 のバケットポリシーを作成する</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            VPC 内で Elastic IP アドレスが関連付けられた EC2 インスタンスを停止して起動した場合に以下のどれが発生するでしょうか？
+        </div>
+        <div>
+            <span class="answer">Elastic IP アドレスの関連付けが解除される</span>
+            <span class="answer" data-correct>インスタンスストアデバイス上の全データはなくなる</span>
+            <span class="answer">EBS(Elastic Block Store)上の全データはなくなる</span>
+            <span class="answer">ENI(Elastic Network Interface)はデタッチされる</span>
+            <span class="answer" data-correct>EC2 インスタンスが稼働するホストが変わる</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            EC2 の基本モニタリングにおいて、CloudWatch はどのメトリクスを提供しているでしょうか？
+        </div>
+        <div>
+            <span class="answer">失敗したリクエスト数などの Web サーバのメトリクス</span>
+            <span class="answer">メモリ使用率などの OS のメトリクス</span>
+            <span class="answer">接続数などのデータベースメトリクス</span>
+            <span class="answer" data-correct>CPU 使用率などのハイパーバイザーメトリクス</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            データセキュリティのために AWS によって実行される運用プロセスはどれですか？
+        </div>
+        <div>
+            <span class="answer">あらゆる共有ストレージデバイス上のデータを AES-256 で暗号化して保存</span>
+            <span class="answer" data-correct>業界の標準的な方法によるデバイスのデータ消去</span>
+            <span class="answer">EBS ボリュームと EBS スナップショットのバックグラウンドでのウィルススキャン</span>
+            <span class="answer">複数のリージョン間でのデータの複製</span>
+            <span class="answer">EBS ボリュームのマウントが解除されたタイミングでの EBS データのワイプアウト</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            S3 のデータを誤った削除や上書きから守るためにすべきことはどれでしょうか？
+        </div>
+        <div>
+            <span class="answer" data-correct>バケットの S3 のバージョニング機能を有効にする</span>
+            <span class="answer">S3 のデータへのアクセスを Signed URL 経由のみにする</span>
+            <span class="answer">IAM バケットポリシーを使って S3 での削除を無効にする</span>
+            <span class="answer">S3 で低冗長化オプションを有効にする</span>
+            <span class="answer">多要素認証(MFA)によって保護されたアクセスを有効にする</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+</article>
