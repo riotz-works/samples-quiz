@@ -1,0 +1,162 @@
+﻿﻿<article class="quiz" data-title="AWS 認定 システムオペレーションアドミニストレーター - アソシエイト レベル サンプル試験" data-subtitle="公式サイトで公開されている AWS 認定 SysOps アドミニストレーター – アソシエイト の サンプル問題です。（2014年版）">
+
+    <section class="question">
+        <div class="text">
+            Amazon RDS の操作において、AWS が責任を持って実施する管理関連タスクは次のうちどれですか？
+        </div>
+        <div>
+            <span class="answer">データのインポートとクエリの最適化。</span>
+            <span class="answer" data-correct>データベースソフトウェアのインストールと定期的なパッチの適用。</span>
+            <span class="answer" data-correct>5 分以内での特定時点への復旧を含む、自動化データベースバックアップの作成と維持。</span>
+            <span class="answer">規定の長期保存要件に準拠した、自動化データベースバックアップの作成と維持。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            デベロッパーに開発およびテストプラットフォームを提供するアプリケーションを AWS で管理しています。現在、どちらの環境も m1.small EC2 インスタンスで構成されています。デベロッパーが、テスト環境でのネットワーク負荷の増加に伴ってパフォーマンスが低下していることに気付きました。
+            テスト環境におけるこうしたパフォーマンス問題をどのように軽減しますか？
+        </div>
+        <div>
+            <span class="answer" data-correct>m1.small をより大規模なインスタンスタイプにアップグレードする。</span>
+            <span class="answer">テストインスタンスに追加の ENI を追加する。</span>
+            <span class="answer">EBS 最適化オプションを使用して、EBS トラフィックの負荷を軽減する。</span>
+            <span class="answer">ネットワーク使用率が 80% を超えた場合は、追加のネットワーク帯域幅をプロビジョニングするよう、Amazon CloudWatch を設定する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            AWS 適正利用規約では、EC2 インスタンスの侵入テストについてどのように定められていますか？
+        </div>
+        <div>
+            <span class="answer">お客様がご自分のインスタンスに対して実施できるが、EC2 インスタンスから行う場合に限る。</span>
+            <span class="answer">AWS が実施でき、定期的に行っている。</span>
+            <span class="answer">AWS が実施でき、お客様からのリクエストに応じて行う。</span>
+            <span class="answer">いかなる状況においても明示的に禁止されている。</span>
+            <span class="answer" data-correct>お客様がご自分のインスタンスに対して実施できるが、AWS からの事前許可が必要である。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            次の IAM ポリシーについて質問に答えてください。
+
+            {  
+            "Version":"2012‐10‐17",
+              "Statement": [
+                {  
+                  "Effect": "Allow",
+                  "Action": [
+                     "s3:Get*",  "s3:List*"
+                     ],
+                  "Resource": "*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action":"s3:PutObject",
+                  "Resource": "arn:aws:s3:::corporate_bucket/*"
+                }
+              ]
+            }  
+
+            この IAM ポリシーでは何が許可されますか？
+        </div>
+        <div>
+            <span class="answer" data-correct>アカウントが所有するすべての S3 バケットからオブジェクトを読み取ることができる。</span>
+            <span class="answer" data-correct>'corporate_bucket' というバケットにオブジェクトを書き込むことができる。</span>
+            <span class="answer">'corporate_bucket' というバケットのアクセス権を変更できる。</span>
+            <span class="answer">'corporate_bucket' というバケットのオブジェクトを読み取ることができるが、バケットのオブジェクトをリストすることはできない。</span>
+            <span class="answer" data-correct>'corporate_bucket' というバケットからオブジェクトを読み取ることができる。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            ブロックサイズが 4KB のデータを秒間 100,000 回 以上のランダムに読み取る必要がある NoSQL データベースに適切なストレージソリューションを選定する作業を任されました。
+            この要件を満たす EC2 オプションはどれですか？
+        </div>
+        <div>
+            <span class="answer">EBS プロビジョンド IOPS</span>
+            <span class="answer" data-correct>SSD インスタンスストア</span>
+            <span class="answer">EBS 最適化インスタンス</span>
+            <span class="answer">RAID 1+0 で設定されたハイストレージインスタンス</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            インスタンス A とインスタンス B は、VPC の 2 つの異なるサブネット A と B において実行されています。インスタンス A からインスタンス B に ping を行っても応答がありません。
+            この原因として考えられる理由は何ですか？
+        </div>
+        <div>
+            <span class="answer">サブネット A のルーティングテーブルに、サブネット B へのターゲットルートがない</span>
+            <span class="answer" data-correct>インスタンス B にアタッチされたセキュリティグループは、インバウンド ICMP トラフィックを許可しない</span>
+            <span class="answer">インスタンス A の IAM ロールにリンクされたポリシーが正しく設定されていない</span>
+            <span class="answer" data-correct>サブネット B の NACL は、アウトバウンド ICMP トラフィックを許可しない</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            世界中の 5 つのリージョンにおける 10 個の EC2 インスタンス（1 リージョンにつき 2 つのインスタンス）でウェブストアサイトをホスティングしています。
+            5 つのうち 1 つのリージョンで長時間ネットワーク接続が切断された場合、ダウンタイムを最小限に抑えてサイトの可用性を維持できるようにするには、サイトをどのように設定しますか？
+        </div>
+        <div>
+            <span class="answer">Elastic Load Balancing を作成して、EC2 インスタンスの前に配置する各 ELB で適切なヘルスチェックを設定する</span>
+            <span class="answer">各リージョンのインスタンス間で VPN 接続を確立し、リージョン全体で広範囲の接続切断が発生した場合は、BGP のフェイルオーバー機能を利用する</span>
+            <span class="answer">各リージョンの Elastic Load Balancing について Route 53 レイテンシーベースのルーティングレコードセットを設定し、各 ELB で適切なヘルスチェックを設定する</span>
+            <span class="answer" data-correct>Route 53 に Evaluate Target Health フラグを True としたレイテンシーベースのルーティングレコードセットを作成し、それを各リージョンの Elastic Load Balancing に紐づける</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            Elastic Load Balancing（ELB）、EC2 上の 3 台のウェブ/アプリケーションサーバープロビジョンド IOPS が 5000 に設定された 1 台の MySQL RDS データベースで構成される、ステートレスウェブアプリケーションを実行しています。ユーザーへの平均応答時間が増加しています。CloudWatch を調べたところ、CPU 使用率はそれぞれ、ウェブ/アプリケーションサーバーで 95%、データベースでは 20% です。データベースディスクの平均操作回数は、2000 ～ 2500 です。
+            応答時間を向上させることのできる方法は次のうちどれですか？
+        </div>
+        <div>
+            <span class="answer" data-correct>ウェブ/アプリケーションサーバーに、より適切な CPU/メモリの割合を持つ別のEC2 インスタンスタイプを選択する。</span>
+            <span class="answer" data-correct>Auto Scaling を使用し、CPU 負荷のしきい値に基づいて追加のウェブ/アプリケーションサーバーを追加する。</span>
+            <span class="answer">ウェブ/アプリケーション EC2 インスタンスで許可するオープン TCP 接続の数を増やす。</span>
+            <span class="answer">Auto Scaling を使用し、メモリ使用率のしきい値に基づいて追加のウェブ/アプリケーションサーバーを追加する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            S3 内のデータへのアクセスを制限するには、どの機能を使えばよいですか？
+        </div>
+        <div>
+            <span class="answer">バケットに CloudFront ディストリビューションを作成する。</span>
+            <span class="answer" data-correct>S3 バケットポリシーを設定する。</span>
+            <span class="answer">S3 仮想ホスティングを使用する。</span>
+            <span class="answer" data-correct>S3 ACL をバケットまたはオブジェクトに設定する。</span>
+            <span class="answer">IAM Identity Federation を有効にする。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            AWS を使って、会社のバックアップおよびアーカイブ戦略を確立する必要があります。コンプライアンス上の理由から、書類は 3 か月間は即座のアクセスが可能な状態にし、5 か月間は利用可能な状態にしておく必要があります。
+            こうした要件を最もコスト効率の高い方法で達成する AWS サービスはどれですか？
+        </div>
+        <div>
+            <span class="answer">StorageGateway を使用して S3 にデータを保存し、ライフサイクルポリシーを使用して Redshift にデータを移行し、長期間アーカイブする</span>
+            <span class="answer">DirectConnect を使用して S3 にデータをアップロードし、IAM ポリシーを使用して Glacier にデータを移行し、長期間アーカイブする</span>
+            <span class="answer">EBS でデータをアップロードし、ライフサイクルポリシーを使用して EBS スナップショットを S3 に移行し、後に Glacier に移行して長期間アーカイブする</span>
+            <span class="answer" data-correct>S3 にデータをアップロードし、ライフサイクルポリシーを使用して Glacier にデータを移行し、長期間アーカイブする</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+</article>
