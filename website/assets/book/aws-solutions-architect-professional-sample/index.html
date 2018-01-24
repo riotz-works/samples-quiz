@@ -1,0 +1,88 @@
+﻿﻿<article class="quiz" data-title="AWS 認定 ソリューションアーキテクト - プロフェッショナル レベル サンプル試験" data-subtitle="公式サイトで公開されている AWS 認定ソリューションアーキテクト – プロフェッショナル の サンプル問題です。（2014年版）">
+
+    <section class="question">
+        <div class="text">
+            あなたの会社にあるオンプレミス環境のコンテンツマネージメントシステムは以下のアーキテクチャを採用しています。
+            • アプリケーション層 – JBoss アプリケーションサーバー上で動作する Java コード
+            • データベース層 – Oracle RMAN バックアップユーティリティを使用して定期的に S3 にバックアップされる Oracle データベース
+            • 静的コンテンツ – iSCSI インターフェース経由でアプリケーションサーバにアタッチされた、Gateway Stored Volume の Storage Gateway に格納された 512GB のコンテンツ
+
+            AWS をベースとした災害対策戦略を想定した場合、最も優れた RTO を得られるのものはどれですか?
+        </div>
+        <div>
+            <span class="answer" data-correct>EC2 に Oracle データベースおよび JBoss アプリサーバーをデプロイする。 Amazon S3 から RMAN Oracle バックアップを復元する。Storage Gateway から静的コンテンツの EBS ボリュームを生成し、JBossEC2 サーバーにアタッチする。</span>
+            <span class="answer">RDS で Oracle データベースをデプロイする。EC2 に JBoss アプリサーバー をデプロイする。 Amazon Glacier から RMAN Oracle バックアップを復元する。Storage Gateway から静的コンテンツの EBS ボリュームを生成し、JBoss EC2 サーバーにアタッチする。</span>
+            <span class="answer">EC2 に Oracle データベースおよび JBoss アプリサーバーをデプロイする。 Amazon S3 から RMAN Oracle バックアップを復元する。Amazon EC2 で稼働する AWS Storage Gateway を iSCSI ボリュームとして JBoss EC2 サーバにアタッチして、静的コンテンツを復元する。</span>
+            <span class="answer">EC2 に Oracle データベースおよび JBoss アプリサーバーをデプロイする。 Amazon S3 から RMAN Oracle バックアップを復元する。 Amazon EC2 で稼働する AWS Storage Gateway-VTL から静的コンテンツを復元する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            ある ERP アプリケーションが、1 つのリージョンで複数のアベイラビリティーゾーンにまたがってデプロイさ れています。障害が発生した場合、RTO は 3 時間未満、RPO は 15 分である必要があります。お客様は、約 1.5 時間前にデータ破損が発生していたことに気づきました。このような種類の障害が発生したときにこの RTO と RPO を達成するために使用できるのは、どの DR 戦略ですか？
+        </div>
+        <div>
+            <span class="answer">15 分ごとに Glacier に DB バックアップを保管すると共に、 Amazon S3 に 5 分ごとのトランザクションログを保管する 。</span>
+            <span class="answer">2 つのアベイラビリティーゾーンの間で同期型データベースのマスター/スレーブレプ リケーションを使用する。</span>
+            <span class="answer" data-correct>Amazon S3 への 1 時間ごとの DB バックアップ取得を行うと共に S3 に 5 分ごとのトランザクションログを保管する。</span>
+            <span class="answer">Amazon EC2 のインスタンスストアボリュームへ 1 時間ごとに DB の バックアップ取得を行うと共にAmazon S3 に 5 分ごとのトランザクションログを保管する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            会社のマーケティング担当ディレクターから、"何気ない親切" と思われる善行を目にしたら 80 文字で要約して投稿できるモバイルアプリケーションを作成するように依頼されました。できるだけ幅広い種類のスマートフォン、ブラウザ、タブレットで動作するよう に、JavaScript でアプリケーションを記述することにしました。投稿された要約を保存するため、アプリケーションから Amazon DynamoDB にアクセスさせる必要があります。プロトタイプの初期テストでは、使用状況に大きなスパイクはないことが分かっています。このアプリケーションで最もコスト効率が高く、スケーラブルなアーキテクチャとなるのはどの選択肢ですか？
+        </div>
+        <div>
+            <span class="answer">EC2 インスタンス上で Security Token Service の Token Vending Machine (TVM)を使用して、 JavaScript クライアント に対し一時的な認証情報を提供し、Amazon Identity and Access Management (IAM) ユーザーにマッピングされ、DynamoDB の入力および S3 への GET を許可する署名付き認証情報を提供する。ウェブサイトとして有効にした S3 バケットから モバイルアプリケーションを配信し、クライアントにより DynamoDB が更新される。</span>
+            <span class="answer" data-correct>Amazon、Google、または Facebook のようなウェブ認証プロバイダにアプリケーションを登録し、そのプロバイダ用の IAM ロールを作成し、IAM ロールに は S3 への GET および DynamoDB の入力を許可する権限を設定する。ウェブサイトとして有効にした S3 バケットからモバイルアプリケーションを配信し、クライアントにより DynamoDB が更新される。</span>
+            <span class="answer">Security Token Service の Token Vending Machine（TVM）を使用して、JavaScript クライアントに対し一時的な認証情報を提供し、IAM ユーザーにマッピングされ、DynamoDB の入力を許可する署名付き認証情報を提供する。負荷分散され、オートスケール設定された Apache EC2 インスタンスからモバイルアプリケーションを配信する。 EC2 インスタンスは、DynamoDB の入力を許可する IAM ロールを設定し、 サーバーにより DynamoDB が更新される。</span>
+            <span class="answer">Amazon、Google、または Facebook のようなウェブ認証プロバイダに JavaScript アプリケーションを登録し、そのプロバイダ用の IAM ロールを作成し、IAM ロールに DynamoDB の入力を許可する権限を設定する。負荷分散さ れ、オートスケール設定された Apache EC2 インスタンスからモバイルアプリケーションを配信する。EC2 インスタンスは、DynamoDB の入力を許可する IAM ロールを設定し、サーバーにより DynamoDB が更新される。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            ユーザーにとって機密性の高い情報を取得して表示するウェブサイトを構築しています。サイトが受信するトラフィックの量はわかっていて、上下しないと予想されます。このサイトでは、SSL を活用してクライアントとウェブサーバー間の通信を保護します。サイトの性質のゆえに、SSL プライベートキーのセキュリティについて非常に懸念しており、キーが誤って、または意図的に環境外に移動されることがないようにしたいと思っています。また、サイトで表示されるデータは暗号化された EBS ボリュームに保存されますが、ウェブサーバーのログに機密情報が含まれることも懸念しているため、自社の従業員以外には復号化できないようにログを保存する必要があります。すべての要件を満たすのは次のうちどのアーキテクチャですか？
+        </div>
+        <div>
+            <span class="answer">Elastic Load Balancing を使用して、トラフィックを一連のウェブサーバーに分散する。SSL プライベートキーを保護するため、キーをロードバランサーにアップロードして、SSL トラフィックの負荷を軽減するようにロードバランサーを設定する。ウェブサーバーのログを、ランダムに生成された AES キーを使用して暗号化されているエフェメラルボリュームに書き込む。</span>
+            <span class="answer">Elastic Load Balancing を使用して、トラフィックを一連のウェブサーバーに分散する。ロードバランサーで TCP ロードバランシングを使用して、起動時にプライベート Amazon S3 バケットからプライベートキーを取得するようにウェブサーバーを設定する。Amazon S3 サーバー側の暗号化を使用して、ウェブサーバーのログをプライベート Amazon S3 バケットに書き込む。</span>
+            <span class="answer">Elastic Load Balancing を使用して、トラフィックを一連のウェブサーバーに分散する。TCP ロードバランシングを実行するようにロードバランサーを設定する。AWS CloudHSM を使用してウェブサーバー上で SSL トランザクションを処理し、Amazon S3 サーバー側の暗号化を使用して、ウェブサーバーのログをプライベート Amazon S3 バケットに書き込む。</span>
+            <span class="answer" data-correct>Elastic Load Balancing を使用して、トラフィックを一連のウェブサーバーに分散する。 TCP ロードバランシングを実行するためにロードバランサーを設定しする。AWS CloudHSM を使用してウェブサーバー上で SSL トランザクションを処理し、ウェブサーバーのログを、ランダムに生成された AES キーを使用して暗号化されているエフェメラルボリュームに書き込む。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            あなたはファットクライアントアプリケーション向けのネットワーク接続を設計しています。このアプリケーションは、ビジネス旅行者向けに設計されており、ホテルの部屋、カフェ、公共の Wi-Fi ホットスポット、その他の場所などのインターネットから接続されています。このアプリケーションをインターネットで公開したくありません。
+            デプロイメントと運用コストを最小限に抑えながら上記の要件を満たすネットワーク設計はどれですか？
+        </div>
+        <div>
+            <span class="answer">AWS Direct Connect を導入し、VPC へのプライベートインターフェイスを準備する。パブリックサブネットを作成し、そこにアプリケーションサーバーを配置する。</span>
+            <span class="answer">アプリケーションへのバックエンド接続の終端処理する SSL リスナーを使用した、Elastic Load Balancing を実装する。</span>
+            <span class="answer">IPsec VPN 接続環境を構築し、ユーザーに設定情報の詳細を提供する。VPC にパブリックサブネットを作成し、そこにアプリケーションサーバーを配置する。</span>
+            <span class="answer" data-correct>VPC のパブリックサブネットで SSL VPN ソリューションを構築してから、すべてのユーザーのコンピュータに SSL VPN クライアントソフトウェアをインストールして設定する。VPC にプライベートサブネットを作成し、そこにアプリケーションサーバーを配置する。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            あなたの会社は、中央ファイルサーバー経由で 900 GB のデータを共有している、オンプレミスのレガシーエンジニアリングアプリ ケーションをホストしています。エンジニアリングデータは、ファイルサイズがメガバイトから数ギガバイトで、数千個のファイルで構成されています。エンジニアは通常、1 日に 5～10% のファイルを変更します。CTO はこのアプリケー ションを AWS に移行したいと考えていますが、ユーザーのダウンタイムを最小限にするために週末に移行できることが条件 です。計算によると、会社の既存の 45 Mbps インターネット接続を使用して 900 GB のデータを転送するには、最低 48 時間かかります。
+            AWS 上てでアプリケーション環境を複製した後、与えられた時間内にデータを失うことなくアプリケーションのデー タを AWS に移行するには、どうしたらよいですか？
+        </div>
+        <div>
+            <span class="answer">大容量ファイルには複数のスレッドとマルチパートアップロードを使用して、週末にデータを Amazon S3 にコピーする。開発者と並行して作業し、複製されたアプリケーション環境を再設定して、Amazon S3 を利用してエンジニアリングファイルを提供する。</span>
+            <span class="answer" data-correct>移行の 1 週間前から Amazon S3 にエンジニアリングデータを同期する。金曜日の夜に最後の同期を実行して、同期が完了したら、データセット全体を AWS ファイルサーバーにコピーする。</span>
+            <span class="answer">金曜日にエンジニアリングデータを 1 TB の USB ドライブにコピーし、土曜日に配送されるように USB ドライブを夜間便ですぐに AWS Import/Export に送付して、EBS ボリュームにインポートしてもらう。インポートされた EBS ボリュームを日曜日に AWS のファイルサーバーにマウントする。</span>
+            <span class="answer">AWS Storage Gateway の Gateway-Stored Volume を活用して、ボリュームを作成する。金曜日の夜にエンジニアリング データを Storage Gateway のボリュームにコピーする。 データをコピーした後、ボリュームのスナップショットを実行し、EBS ボリュームとしてボリュームを復元して、日曜日に AWS のファイルサーバーにアタッチする。</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+</article>
