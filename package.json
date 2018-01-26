@@ -1,5 +1,5 @@
 {
-  "name": "prototypes-quiz",
+  "name": "samples-quiz",
   "version": "0.0.1",
   "main": "handler.js",
   "private": true,

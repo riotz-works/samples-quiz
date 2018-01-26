@@ -1,1 +1,1 @@
-# prototypes-quiz
+# samples-quiz

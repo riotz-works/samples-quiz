@@ -1,5 +1,5 @@
 service:
-  name: prototypes-quiz
+  name: samples-quiz
 
 provider:
   name: aws
