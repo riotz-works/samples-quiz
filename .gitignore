@@ -75,7 +75,4 @@ target/
 .webpack
 
 # Workaround to not commit copyrighted books (Add manually)
-website/assets/book/sales-rep-grade2
-website/assets/book/sales-rep-grade2-short-exam
-website/assets/book/sales-rep-grade3
-website/assets/book/sales-rep-mix
+website/assets/book/sales-rep
