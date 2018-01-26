@@ -1,0 +1,142 @@
+﻿﻿<article class="quiz" data-title="AWS Training - Architecting on AWS 知識の確認" data-subtitle="AWS Training - Architecting on AWS 受講 の 前提となる知識を有しているかどうかを確認できます。（v3.2版）">
+
+    <section class="question">
+        <div class="text">
+            Amazon S3 バケットオブジェクトの数とオブジェクトサイズの制限に該当するものは、次のうちどれですか？
+        </div>
+        <div>
+            <span class="answer">20 ギガバイトのオブジェクト、2 億 5,400 万未満のオブジェクト</span>
+            <span class="answer">5 テラバイト未満のオブジェクト、オブジェクトの数に制限はない</span>
+            <span class="answer" data-correct>5 テラバイトのオブジェクト、オブジェクトの数に制限はない</span>
+            <span class="answer">ファイルサイズにも、オブジェクトの数にも制限はない</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            次の記述は正しいですか？Elastic Load Balancing は、Amazon EC2 インスタンスが Elastic Load Balancin g ヘルスチェックまたは Amazon EC2 ヘルスチェックのいずれかによりトラフィックを受信できる状態にある かを確認するよう設定できる。
+        </div>
+        <div>
+            <span class="answer">正しい</span>
+            <span class="answer" data-correct>誤り</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            マネジメントコンソールウィザードで Amazon EC2 インスタンスを起動する際、デフォルト設定をそのまま使 用すると、「launch-wizard-XX」というセキュリティグループが作成されます。これはどのような意味ですか？
+        </div>
+        <div>
+            <span class="answer" data-correct>このインスタンスが持つセキュリティグループでは、オペレーティングシステムに応じて、 任意の接続元からポート 22 または 3389 への接続が許可される。</span>
+            <span class="answer">このインスタンスに接続可能なユーザーならだれでも、インスタンスの SSH を使用できる。</span>
+            <span class="answer">このセキュリティグループによって、インターネット向けにポート 80 が開かれる。</span>
+            <span class="answer">このセキュリティグループにはルールがないため、このインスタンスにはアクセスできない</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            コードから AWS インフラストラクチャを作成するために使用できる AWS サービスを挙げてください。
+        </div>
+        <div>
+            <span class="answer">AWS Elastic Beanstalk</span>
+            <span class="answer">AWS CodeDeploy</span>
+            <span class="answer" data-correct>AWS CloudFormation</span>
+            <span class="answer">AWS OpsWorks</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            AWS CloudFormation スクリプトは正確には何と呼ばれますか？
+        </div>
+        <div>
+            <span class="answer">スクリプト</span>
+            <span class="answer">キーペア</span>
+            <span class="answer" data-correct>テンプレート</span>
+            <span class="answer">アクセスコントロールリスト</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            AWS CloudFormation で作成された環境は何と呼ばれますか？
+        </div>
+        <div>
+            <span class="answer">コマンド</span>
+            <span class="answer" data-correct>スタック</span>
+            <span class="answer">インスタンス</span>
+            <span class="answer">パラメータ</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            Amazon S3 は、グローバル、リージョナル、アベイラビリティーゾーンのうち、どれに基づくサービスですか？
+        </div>
+        <div>
+            <span class="answer">グローバル</span>
+            <span class="answer" data-correct>リージョナル</span>
+            <span class="answer">アベイラビリティーゾーン</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            ウェブアプリケーションが静的コンテンツを提供する際の負荷を軽減し、ユーザーがアップロードしたイメ ージやビデオをインスタンス外部に保存できるようサポートする AWS サービスはどれですか？
+        </div>
+        <div>
+            <span class="answer">Amazon EBS</span>
+            <span class="answer" data-correct>Amazon S3</span>
+            <span class="answer">Amazon Glacier</span>
+            <span class="answer">Amazon CloudFront</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            アプリケーションのパブリックウェブサーバーまたはプライベートのアプリケーションサーバーにスケーラ ブルな負荷分散を提供するサービスはどれですか？
+        </div>
+        <div>
+            <span class="answer" data-correct>Elastic Load Balancing</span>
+            <span class="answer">Auto Scaling</span>
+            <span class="answer">AWS Lambda</span>
+            <span class="answer">Amazon EC2</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            製品やプラットフォームに関係なく、Memcached や Redis クラスターの管理でありがちな面倒な作業を 軽減するよう設計されているサービスはどれですか？
+        </div>
+        <div>
+            <span class="answer">Amazon DynamoDB</span>
+            <span class="answer">Amazon VPC</span>
+            <span class="answer">Amazon RDS</span>
+            <span class="answer" data-correct>Amazon ElastiCache</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+    <section class="question">
+        <div class="text">
+            ウェブアプリケーションで、Amazon DynamoDB テーブルと Amazon S3 バケットへの読み込み/書き込 みのための認証情報と認証が必要な場合、どの AWS サービスを使用しますか？
+        </div>
+        <div>
+            <span class="answer" data-correct>AWS Key Management Service</span>
+            <span class="answer">Amazon CloudWatch</span>
+            <span class="answer">AWS CloudTrail</span>
+        </div>
+        <div class="description"></div>
+    </section>
+
+</article>
