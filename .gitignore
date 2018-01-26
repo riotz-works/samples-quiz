@@ -76,3 +76,4 @@ target/
 
 # Workaround to not commit copyrighted books (Add manually)
 website/assets/book/sales-rep
+website/assets/book/aws-practice-exam
